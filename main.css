@@ -1,0 +1,30 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.split-screen {
+    display: flex;
+    height: 100vh; /* Use viewport height to ensure full height */
+}
+
+.left-pane, .right-pane {
+    width: 50%;
+    height: 100vh; /* Use viewport height to ensure full height */
+/*    overflow: auto;*/
+    overflow: hidden;
+}
+
+.left-pane {
+    border-right: 1px solid #ccc;
+}
+
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Optional: remove the border for a cleaner look */
+}
+
+/* Add additional styling as needed */
