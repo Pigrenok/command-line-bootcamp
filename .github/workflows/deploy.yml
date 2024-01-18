@@ -168,6 +168,14 @@ jobs:
           sudo umount /mnt/
       # Result is an ext2 image for webvm.
 
+      # Set up quarto
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+      # Render guides
+      - name: render guides
+        shell: bash
+        run: chmod +x render_guides.sh && ./render_guides.sh
+
       # Move required files for gh-pages deployment to the deployment directory $DEPLOY_DIR.
       - run: sudo mv assets xterm guide favicon.ico index.html login.html network.js script.js main.css scrollbar.css serviceWorker.js $DEPLOY_DIR
       
@@ -221,14 +229,6 @@ jobs:
           files: | # Assets to upload as release.
             ${{ env.IMAGE_NAME }}
       
-      # Set up quarto
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-      # Render guides
-      - name: render guides
-        shell: bash
-        run: chmod +x reder_guides.sh && ./render_guides
-
   deploy_to_github_pages: # Job that deploys the github-pages artifact to github-pages.
     if: ${{ github.event.inputs.DEPLOY_TO_GITHUB_PAGES == 'true' }}
     needs: build
