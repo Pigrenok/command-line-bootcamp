@@ -51,63 +51,33 @@ From a local `git clone`
 	- You can also build your own by selecting the "Upload GitHub release" workflow option.
 	- Place the image in the repository root folder.
 - Edit `index.html`.
-	- Uncomment the default values for `CMD`, `ARGS`, `ENV` and `CWD`.
-	- Replace `DEVICE_TYPE` with `"bytes"`.
-	- Replace `IMAGE_URL` with the name of the Ext2 image. For example `"debian_mini_20240115_7528113030.ext2"`.
+	- Uncomment the default values for `CMD`, `ARGS`, `ENV` and `CWD`:
+	```{javascript}
+	// cmd, cwd, args and env are replaced by the Github actions workflow.
+	// var cmd = CMD;
+	// var args = ARGS;
+	// var env = ENV;
+	// var cwd = CWD;
+	// Reasonable defaults for local deployments
+	var cmd = "/bin/bash";
+	var args = ["--login"];
+	var env = ["HOME=/home/learner", "TERM=xterm", "USER=learner", "SHELL=/bin/bash", "EDITOR=nano", "LANG=en_US.UTF-8", "LC_ALL=C"];
+	var cwd = "/home/learner";
+	```
+	- Uncomment CheerpX initialisation as follows:
+	```{javascript}
+	// The device url and type are replaced by Github Actions.
+	// CheerpXApp.create({devices:[{type:DEVICE_TYPE,url:IMAGE_URL,name:"block1"}],mounts:[{type:"ext2",dev:"block1",path:"/"},{type:"cheerpOS",dev:"/app",path:"/app"},{type:"cheerpOS",dev:"/str",path:"/data"},{type:"devs",dev:"",path:"/dev"}], networkInterface: networkInterface, activityInterface: {cpu: cpuCallback, dev: devCallback}}).then(runTest, failCallback);
+	// Settings for local deployment. You need to use the image file name that you have in your directory.
+	CheerpXApp.create({devices:[{type:"bytes",url:"debian_mini_20240115_7528113030.ext2",name:"block1"}],mounts:[{type:"ext2",dev:"block1",path:"/"},{type:"cheerpOS",dev:"/app",path:"/app"},{type:"cheerpOS",dev:"/str",path:"/data"},{type:"devs",dev:"",path:"/dev"}], networkInterface: networkInterface, activityInterface: {cpu: cpuCallback, dev: devCallback}}).then(runTest, failCallback);
+	```
 - Start a local HTTP server.
 - Enjoy your local WebVM.
 
-# Example customization: Python3 REPL
-
-The `Deploy` workflow takes into account the `CMD` specified in the Dockerfile. To build a REPL you can simply apply this patch and deploy.
-
-```diff
-diff --git a/dockerfiles/debian_mini b/dockerfiles/debian_mini
-index 2878332..1f3103a 100644
---- a/dockerfiles/debian_mini
-+++ b/dockerfiles/debian_mini
-@@ -15,4 +15,4 @@ WORKDIR /home/user/
- # We set env, as this gets extracted by Webvm. This is optional.
- ENV HOME="/home/user" TERM="xterm" USER="user" SHELL="/bin/bash" EDITOR="vim" LANG="en_US.UTF-8" LC_ALL="C"
- RUN echo 'root:password' | chpasswd
--CMD [ "/bin/bash" ]
-+CMD [ "/usr/bin/python3" ]
-```
-
 # Bugs and Issues
 
-Please use [Issues](https://github.com/leaningtech/webvm/issues) to report any bug.
-Or come to say hello / share your feedback on [Discord](https://discord.gg/yTNZgySKGa).
+Please use [Issues](https://github.com/Pigrenok/command-line-bootcamp/issues) to report any bug.
 
 # More links
 
 - [WebVM: server-less x86 virtual machines in the browser](https://leaningtech.com/webvm-server-less-x86-virtual-machines-in-the-browser/)
-- [WebVM: Linux Virtualization in WebAssembly with Full Networking via Tailscale](https://leaningtech.com/webvm-virtual-machine-with-networking-via-tailscale/)
-- [Mini.WebVM: Your own Linux box from Dockerfile, virtualized in the browser via WebAssembly](https://leaningtech.com/mini-webvm-your-linux-box-from-dockerfile-via-wasm/)
-- Reference GitHub Pages deployment: [Mini.WebVM](https://mini.webvm.io)
-- [Crafting the Impossible: X86 Virtualization in the Browser with WebAssembly](https://www.youtube.com/watch?v=VqrbVycTXmw) Talk at JsNation 2022
-
-# Thanks to... 
-This project depends on:
-- [CheerpX](https://labs.leaningtech.com/cheerpx), made by [Leaning Technologies](https://leaningtech.com) for x86 virtualization and Linux emulation
-- xterm.js, [https://xtermjs.org/](https://xtermjs.org/), for providing the Web-based terminal emulator
-- [Tailscale](https://tailscale.com/), for the networking component
-- [lwIP](https://savannah.nongnu.org/projects/lwip/), for the TCP/IP stack, compiled for the Web via [Cheerp](https://github.com/leaningtech/cheerp-meta)
-
-# Versioning
-
-WebVM depends on the CheerpX x86-to-WebAssembly virtualization technology. A link to the current latest build is always available at [https://cheerpxdemos.leaningtech.com/publicdeploy/LATEST.txt](https://cheerpxdemos.leaningtech.com/publicdeploy/LATEST.txt). Builds of CheerpX are immutable and uniquely versioned. An example link would be:
-
-`https://cheerpxdemos.leaningtech.com/publicdeploy/20230517_94/cx.js`
-
-We strongly encourage users _not_ to use the latest build. Please directly use a specific build to avoid unexpected regressions. Since builds are immutable, if they work for you now they will keep working forever.
-
-# License
-
-WebVM is released under the Apache License, Version 2.0.
-
-You are welcome to use, modify, and redistribute the contents of this repository.
-
-The public CheerpX deployment is provided **as-is** and is **free to use** for technological exploration, testing and non-commercial uses. Downloading a CheerpX build for the purpose of hosting it elsewhere is not permitted.
-
-If you want to build a product on top of CheerpX/WebVM, please get in touch: sales@leaningtech.com
