@@ -1,27 +1,32 @@
-# WebVM
+# Linux Command Line Bootcamp
 
-[![Discord server](https://img.shields.io/discord/988743885121548329?color=%235865F2&logo=discord&logoColor=%23fff)](https://discord.gg/yWRr2YnD9c)
 [![Issues](https://img.shields.io/github/issues/leaningtech/webvm)](https://github.com/leaningtech/webvm/issues)
 
-This repository hosts the source code for [https://webvm.io](https://webvm.io), a Linux virtual machine that runs in your browser.
+This repository hosts the source code for Linux Command Line Bootcamp, which was derived from [Command Line Bootcamp](https://github.com/command-line-bootcamp/cli-boot.camp) but instead of docker container running in the background, use WebVM [https://webvm.io](https://webvm.io), a Linux virtual machine that runs in your browser.
 
-<img src="assets/welcome_to_WebVM_slim.png" width="95%">
+There are minor modifications to code base and significant changes to the main Docker image for the WebVM to fit into the tutorials.
+
+# TODO
+
+Modify tutorial 27 to work correctly with or without curl (copy necessary file into the image and modify tutorial text).
+
+# WebVM
 
 WebVM is a server-less virtual environment running fully client-side in HTML5/WebAssembly. It's designed to be Linux ABI-compatible. It runs an unmodified Debian distribution including many native development toolchains.
 
 WebVM is powered by the CheerpX virtualization engine, and enables safe, sandboxed client-side execution of x86 binaries on any browser. CheerpX includes an x86-to-WebAssembly JIT compiler, a virtual block-based file system, and a Linux syscall emulator. 
 
-# Enable networking
+## Enable networking
 
 - Click "Connect via Tailscale" in the page header.
 - Log in to Tailscale (create an account if you don't have one).
 - If you are unfamiliar with Tailscale or would like additional information see [WebVM and Tailscale](/docs/Tailscale.md).
 
-# Fork, deploy, customize
+# Fork or use as template
 
-<img src="/assets/fork_deploy_instructions.gif" alt="deploy_instructions_gif" width="90%">
+If you want to tailor this teaching resource to your needs (e.g. teach more advanced topics), you can either fork repository or you can use this repository as a template to create your own (even private) repository and then modify it in any way possible.
 
-- Fork the repository.
+- Fork the repository or create your own from template.
 - Enable Github pages in settings.
 	- Click on `Settings`.
 	- Go to the `Pages` section.
@@ -34,21 +39,21 @@ WebVM is powered by the CheerpX virtualization engine, and enables safe, sandbox
 - After a few seconds a new `Deploy` workflow will start, click on it to see details.
 - After the workflow completes, which takes a few minutes, it will show the URL below the `deploy_to_github_pages` job.
 
-<img src="/assets/result.png" width="70%" >
+## Changing  
 
-You can now customize `dockerfiles/debian_mini` to suits your needs, or make a new Dockerfile from scratch. Use the `Path to Dockerfile` workflow parameter to select it.
+You can now customize `dockerfiles/cl_bootcamp_base` to suits your needs, or make a new Dockerfile from scratch. Use the `Path to Dockerfile` workflow parameter to select it.
 
 # Local deployment
 
 From a local `git clone`
 
-- Download the `debian_mini` Ext2 image from [https://github.com/leaningtech/webvm/releases/](https://github.com/leaningtech/webvm/releases/).
+- Download the `cl_bootcamp_base` Ext2 image from [https://github.com/leaningtech/webvm/releases/](https://github.com/leaningtech/webvm/releases/).
 	- You can also build your own by selecting the "Upload GitHub release" workflow option.
 	- Place the image in the repository root folder.
 - Edit `index.html`.
 	- Uncomment the default values for `CMD`, `ARGS`, `ENV` and `CWD`.
 	- Replace `DEVICE_TYPE` with `"bytes"`.
-	- Replace `IMAGE_URL` with the name of the Ext2 image. For example `"debian_mini_20230519_5022088024.ext2"`.
+	- Replace `IMAGE_URL` with the name of the Ext2 image. For example `"debian_mini_20240115_7528113030.ext2"`.
 - Start a local HTTP server.
 - Enjoy your local WebVM.
 
