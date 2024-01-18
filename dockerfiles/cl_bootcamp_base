@@ -1,5 +1,4 @@
-# FROM --platform=i386 i386/debian:bookworm-slim
-FROM debian:bookworm
+FROM --platform=i386 i386/debian:bookworm
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN  echo "deb http://ftp.de.debian.org/debian bookworm main non-free non-free-firmware" > /etc/apt/sources.list.d/nonfree.list
