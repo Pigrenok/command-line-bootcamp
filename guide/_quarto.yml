@@ -1,0 +1,17 @@
+project:
+  title: "Command Line Bootcamp Guides"
+  output-dir: ./rendered/
+  # lib-dir: ./static/
+  # resources: 
+    
+
+format:
+  html:
+    highlight: github-dark
+    css: ./markdown/style.css
+    code-overflow: wrap
+    code-block-bg: '#000000'
+    highlight-style: arrow-dark
+
+
+
