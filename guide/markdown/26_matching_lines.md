@@ -80,7 +80,7 @@ It was the day my grandmother exploded.
 When he was nearly thirteen, my brother Jem got his arm badly broken at the elbow.
 ```
 
-[grep]: http://en.wikipedia.org/wiki/Grep
+[grep]: https://en.wikipedia.org/wiki/Grep
 
 ```{=html}  
 <div id="buttons-container" class="flex-container">

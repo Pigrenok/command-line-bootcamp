@@ -30,7 +30,7 @@ learner@:temp$ cd ..
 learner@:learning_unix$ rmdir temp
 ```
 
-[rm]: http://en.wikipedia.org/wiki/Rm_(Unix)
+[rm]: https://en.wikipedia.org/wiki/Rm_(Unix)
 
 ```{=html}	
 <div id="buttons-container" class="flex-container">

@@ -18,7 +18,7 @@ You can also use the `~` as a quick way of navigating into subdirectories of you
 learner@:~$ cd /
 learner@:/$ cd ~/learning_unix
 ```
-[home directory]: http://en.wikipedia.org/wiki/Tilde#Directories_and_URLs
+[home directory]: https://en.wikipedia.org/wiki/Tilde#Directories_and_URLs
 
 ```{=html}	
 <div id="buttons-container" class="flex-container">

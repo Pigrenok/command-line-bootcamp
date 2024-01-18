@@ -38,7 +38,7 @@ mkdir -p outer/inner
 
 ***Note the spaces either side the `-p`!***
 
-[cd]: http://en.wikipedia.org/wiki/Cd_(command)
+[cd]: https://en.wikipedia.org/wiki/Cd_(command)
 
 ```{=html}	
 <div id="buttons-container" class="flex-container">

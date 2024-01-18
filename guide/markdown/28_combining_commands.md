@@ -18,7 +18,7 @@ The second example first sends the output of `grep` to the Unix `sort` command. 
 
 >***Whenever making a long pipe, test each step as you build it!***
 
-[pipe]: http://en.wikipedia.org/wiki/Pipe_(Unix)
+[pipe]: https://en.wikipedia.org/wiki/Pipe_(Unix)
 
 ```{=html}	
 <div id="buttons-container" class="flex-container">

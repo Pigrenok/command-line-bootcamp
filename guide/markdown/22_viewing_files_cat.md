@@ -21,7 +21,7 @@ And again, let's clean up the redundant file:
 learner@:learning_unix rm file_copy.txt
 ```
 
-[cat command]: http://en.wikipedia.org/wiki/Cat_(Unix)
+[cat command]: https://en.wikipedia.org/wiki/Cat_(Unix)
 
 ```{=html}	
 <div id="buttons-container" class="flex-container">

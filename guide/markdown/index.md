@@ -49,7 +49,7 @@ Be aware: When you close this browser window your virtual machine will be shut d
 
 >## Credits
 >
->The bootcamp tutorial text was adapted from [the original](http://rescuedbycode.com/linux-bootcamp) by [Keith Bradnam](http://www.keithbradnam.com/). The inspiration and tutorials (slightly modified) are from [cli-boot project](https://github.com/command-line-bootcamp/cli-boot.camp), which in turn used [adventure-time project](https://github.com/command-line-bootcamp/adventure-time). Unlike [adventure-time project](https://github.com/command-line-bootcamp/adventure-time), this project uses [WebVM](https://github.com/leaningtech/webvm) as a virtual machine engine.
+>The bootcamp tutorial text was adapted from [the original](https://rescuedbycode.com/linux-bootcamp) by [Keith Bradnam](https://www.keithbradnam.com/). The inspiration and tutorials (slightly modified) are from [cli-boot project](https://github.com/command-line-bootcamp/cli-boot.camp), which in turn used [adventure-time project](https://github.com/command-line-bootcamp/adventure-time). Unlike [adventure-time project](https://github.com/command-line-bootcamp/adventure-time), this project uses [WebVM](https://github.com/leaningtech/webvm) as a virtual machine engine.
 >
 >This work is licensed under a [Creative Commons 4.0 International License <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" />](https://creativecommons.org/licenses/by/4.0/) for text and [Apache Licence 2.0](https://www.apache.org/licenses/LICENSE-2.0) for code. If you have any issues, please report at [![GitHub issues](https://img.shields.io/github/issues/pigrenok/command-line-bootcamp)](https://github.com/Pigrenok/command-line-bootcamp/issues).
 

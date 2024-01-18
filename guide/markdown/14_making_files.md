@@ -9,7 +9,7 @@ learner@:learning_unix$ ls
 earth.txt  heaven.txt
 ```
 
-[touch]: http://en.wikipedia.org/wiki/Command_line_completion
+[touch]: https://en.wikipedia.org/wiki/Command_line_completion
 
 ```{=html}	
 <div id="buttons-container" class="flex-container">

@@ -17,9 +17,9 @@ On its own, `echo` isn't a very exciting Unix command. It just echoes text back 
 
 When you are using less, you can bring up a page of help commands by pressing `h`, scroll forward a page by pressing `space`, or go forward or backwards one line at a time by pressing `j` or `k`. To exit less, press `q` (for quit). The `less` program also does many other useful things (including text searching).
 
-[less command]: http://en.wikipedia.org/wiki/Less_(Unix)
-[echo command]: http://en.wikipedia.org/wiki/Echo_(command)
-[redirection]: http://en.wikipedia.org/wiki/Redirection_(Unix)
+[less command]: https://en.wikipedia.org/wiki/Less_(Unix)
+[echo command]: https://en.wikipedia.org/wiki/Echo_(command)
+[redirection]: https://en.wikipedia.org/wiki/Redirection_(Unix)
 
 ```{=html}	
 <div id="buttons-container" class="flex-container">

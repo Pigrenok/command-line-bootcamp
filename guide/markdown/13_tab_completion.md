@@ -8,8 +8,8 @@ Navigate to your home directory, and then use the `cd` command to change to the 
 
 Another great time-saver is that Unix stores a list of all the commands that you have typed in each login session. You can access this list by using the [history][] command or more simply by using the up and down arrows to access anything from your history. So if you type a long command but make a mistake, press the up arrow and then you can use the left and right arrows to move the cursor in order to make a change.
 
-[tab complete]: http://en.wikipedia.org/wiki/Command_line_completion
-[history]: http://en.wikipedia.org/wiki/History_(Unix)
+[tab complete]: https://en.wikipedia.org/wiki/Command_line_completion
+[history]: https://en.wikipedia.org/wiki/History_(Unix)
 
 ```{=html}	
 <div id="buttons-container" class="flex-container">

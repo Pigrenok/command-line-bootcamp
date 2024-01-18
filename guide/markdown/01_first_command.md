@@ -24,8 +24,8 @@ learner@:~$ ls /etc/perl
 CPAN  Net
 ```
 
-[ls]: http://en.wikipedia.org/wiki/Ls
-[command prompt]: http://en.wikipedia.org/wiki/Command_line_interface
+[ls]: https://en.wikipedia.org/wiki/Ls
+[command prompt]: https://en.wikipedia.org/wiki/Command_line_interface
 
 ```{=html}	
 <div id="buttons-container" class="flex-container">

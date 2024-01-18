@@ -11,9 +11,9 @@ When you log in to a Unix computer, you are typically placed into your _home_ di
 
 As you learn Unix you will frequently type commands that don't seem to work. Most of the time this will be because you are in the wrong directory, so it's a really good habit to get used to running the `pwd` command a lot.
 
-[pwd]: http://en.wikipedia.org/wiki/Pwd
-[Working Directory]: http://en.wikipedia.org/wiki/Working_directory
-[root directory]: http://en.wikipedia.org/wiki/Root_directory
+[pwd]: https://en.wikipedia.org/wiki/Pwd
+[Working Directory]: https://en.wikipedia.org/wiki/Working_directory
+[root directory]: https://en.wikipedia.org/wiki/Root_directory
 
 ```{=html}	
 <div id="buttons-container" class="flex-container">

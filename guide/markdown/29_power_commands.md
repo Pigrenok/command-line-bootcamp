@@ -4,8 +4,8 @@ The following examples introduce some other Unix commands, and show how they cou
 
 + View the penultimate 10 lines of a file (using [head][] and [tail][] commands):
 
-[head]: http://en.wikipedia.org/wiki/Head_(Unix)
-[tail]: http://en.wikipedia.org/wiki/Tail_(Unix)
+[head]: https://en.wikipedia.org/wiki/Head_(Unix)
+[tail]: https://en.wikipedia.org/wiki/Tail_(Unix)
 
 ```bash
 tail -n 20 file.txt | head
@@ -35,7 +35,7 @@ grep -c '[bc]at' file.txt
 tr 'a-z' 'A-Z' < file.txt
 ```
 
-[tr]: http://en.wikipedia.org/wiki/Tr_(Unix)
+[tr]: https://en.wikipedia.org/wiki/Tr_(Unix)
 
 + Change all occurences of 'Chr1' to 'Chromosome 1' and write changed output to a new file (using [sed][] command):
 
@@ -43,7 +43,7 @@ tr 'a-z' 'A-Z' < file.txt
 sed 's/Chr1/Chromosome 1/g' file.txt > file2.txt
 ```
 
-[sed]: http://en.wikipedia.org/wiki/Sed
+[sed]: https://en.wikipedia.org/wiki/Sed
 
 ```{=html}	
 <div id="buttons-container" class="flex-container">

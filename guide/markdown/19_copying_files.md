@@ -36,7 +36,7 @@ Finally, let's clean up this directory. Note the use of the `*` wildcard, which 
 learner@:learning_unix$ rm file*
 ```
 
-[cp]: http://en.wikipedia.org/wiki/Cp_(Unix)
+[cp]: https://en.wikipedia.org/wiki/Cp_(Unix)
 
 ```{=html}	
 <div id="buttons-container" class="flex-container">

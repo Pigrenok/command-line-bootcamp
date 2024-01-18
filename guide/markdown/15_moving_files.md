@@ -24,8 +24,8 @@ The asterisk `*` acts as a [wild-card character][], essentially meaning 'match a
 
 The '?' character is also a wild-card but with a slightly different meaning. See if you can work out what it does.
 
-[mv]: http://en.wikipedia.org/wiki/Mv
-[wild-card character]: http://en.wikipedia.org/wiki/Wildcard_character
+[mv]: https://en.wikipedia.org/wiki/Mv
+[wild-card character]: https://en.wikipedia.org/wiki/Wildcard_character
 
 ```{=html}	
 <div id="buttons-container" class="flex-container">
