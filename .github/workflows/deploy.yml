@@ -95,9 +95,9 @@ jobs:
     runs-on: ubuntu-latest # Image to run the worker on.
 
     env:
-      TAG: "ext2-webvm-base-image" # Tag of docker image.
+      TAG: "ext2-cl-bootcamp-base-image" # Tag of docker image.
       IMAGE_SIZE: '${{ github.event.inputs.IMAGE_SIZE }}'
-      DEPLOY_DIR: /webvm_deploy/ # Path to directory where we host the final image from.
+      DEPLOY_DIR: /cl_bootcamp_deploy/ # Path to directory where we host the final image from.
 
     permissions: # Permissions to grant the GITHUB_TOKEN.
       contents: write  # Required permission to make a github release.
@@ -116,7 +116,8 @@ jobs:
       - run: sudo mkdir -p $DEPLOY_DIR
 
       # Build the i386 Dockerfile image.
-      - run: docker build . --tag $TAG --file ${{ github.event.inputs.DOCKERFILE_PATH }} --platform=i386
+      - run: docker build . --tag $TAG --file ${{ github.event.inputs.DOCKERFILE_PATH }} 
+      # --platform=i386
       
       # Run the docker image so that we can export the container.
       # Run the Docker container with the Google Public DNS nameservers: 8.8.8.8, 8.8.4.4
@@ -168,7 +169,7 @@ jobs:
       # Result is an ext2 image for webvm.
 
       # Move required files for gh-pages deployment to the deployment directory $DEPLOY_DIR.
-      - run: sudo mv assets examples xterm guide static favicon.ico index.html login.html network.js script.js main.css scrollbar.css serviceWorker.js $DEPLOY_DIR
+      - run: sudo mv assets xterm guide favicon.ico index.html login.html network.js script.js main.css scrollbar.css serviceWorker.js $DEPLOY_DIR
       
       # The .txt suffix enabled HTTP compression for free
       - name: Generate image split chunks and .meta file
