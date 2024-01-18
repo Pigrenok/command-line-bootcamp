@@ -219,6 +219,14 @@ jobs:
           fail_on_unmatched_files: 'true' # Fail in case of no matches with the file(s) glob(s).
           files: | # Assets to upload as release.
             ${{ env.IMAGE_NAME }}
+      
+      # Set up quarto
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+      # Render guides
+      - name: render guides
+        shell: bash
+        run: chmod +x reder_guides.sh && ./render_guides
 
   deploy_to_github_pages: # Job that deploys the github-pages artifact to github-pages.
     if: ${{ github.event.inputs.DEPLOY_TO_GITHUB_PAGES == 'true' }}
