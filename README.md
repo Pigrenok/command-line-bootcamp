@@ -52,7 +52,7 @@ From a local `git clone`
 	- Place the image in the repository root folder.
 - Edit `index.html`.
 	- Uncomment the default values for `CMD`, `ARGS`, `ENV` and `CWD`:
-	```{javascript}
+	```javascript
 	// cmd, cwd, args and env are replaced by the Github actions workflow.
 	// var cmd = CMD;
 	// var args = ARGS;
@@ -65,7 +65,7 @@ From a local `git clone`
 	var cwd = "/home/learner";
 	```
 	- Uncomment CheerpX initialisation as follows:
-	```{javascript}
+	```javascript
 	// The device url and type are replaced by Github Actions.
 	// CheerpXApp.create({devices:[{type:DEVICE_TYPE,url:IMAGE_URL,name:"block1"}],mounts:[{type:"ext2",dev:"block1",path:"/"},{type:"cheerpOS",dev:"/app",path:"/app"},{type:"cheerpOS",dev:"/str",path:"/data"},{type:"devs",dev:"",path:"/dev"}], networkInterface: networkInterface, activityInterface: {cpu: cpuCallback, dev: devCallback}}).then(runTest, failCallback);
 	// Settings for local deployment. You need to use the image file name that you have in your directory.
