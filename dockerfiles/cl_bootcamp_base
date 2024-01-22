@@ -1,12 +1,12 @@
-FROM --platform=i386 i386/debian:bookworm
+FROM --platform=i386 i386/debian:buster
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN  echo "deb http://ftp.de.debian.org/debian bookworm main non-free non-free-firmware" > /etc/apt/sources.list.d/nonfree.list
+RUN  echo "deb http://ftp.de.debian.org/debian buster non-free" > /etc/apt/sources.list.d/nonfree.list
 
 RUN apt-get clean && apt-get update && apt-get -y upgrade
 
 RUN apt-get -y install apt-utils curl \
-	less nano tree perl\
+	less nano tree perl file\
 	man man-db manpages manpages-posix
 # RUN apt autoremove && apt clean
 
@@ -18,8 +18,7 @@ RUN useradd -m learner && echo "learner:learner" | chpasswd
 
 WORKDIR /home/learner/
 # We set env, as this gets extracted by Webvm. This is optional.
-ENV HOME="/home/learner" TERM="xterm" USER="learner" SHELL="/bin/bash" EDITOR="nano" LANG="en_US.UTF-8"
-# LC_ALL="C"
+ENV HOME="/home/learner" TERM="xterm" USER="learner" SHELL="/bin/bash" EDITOR="nano" LANG="en_US.UTF-8" LC_ALL="C"
 
 RUN echo 'root:password' | chpasswd
 
@@ -28,6 +27,7 @@ RUN echo 'root:password' | chpasswd
 RUN echo "export PS1=\"\[$(tput bold)\]\[\033[38;5;75m\]\u\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]@:\[$(tput sgr0)\]\[\033[38;5;9m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\"" >> /home/learner/.bashrc
 RUN mkdir -p a_directory  another_directory 
 
-COPY --chown=user:user ./dockerfiles/data/grades.txt /data/
+COPY --chown=learner:learner ./dockerfiles/data/grades.txt .
+#/data/
 
 CMD [ "/bin/bash" ]
