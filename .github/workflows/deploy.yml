@@ -14,7 +14,8 @@ on:
         type: string
         description: 'Path to the Dockerfile'
         required: true
-        default: 'dockerfiles/cl_bootcamp_base'
+        default: 'dockerfiles/debian_large'
+        # default: 'dockerfiles/cl_bootcamp_base'
 
       IMAGE_SIZE:
         type: string
