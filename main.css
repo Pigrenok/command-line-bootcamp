@@ -20,6 +20,15 @@ body, html {
     border-right: 1px solid #ccc;
 }
 
+.right-pane {
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Stack children vertically */
+}
+
+#terminal {
+  flex-grow: 1; /* Allow the terminal to grow to fill the space */
+  width: 100%; /* Full width of its parent */
+}
 
 iframe {
     width: 100%;
