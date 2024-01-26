@@ -1,3 +1,5 @@
 *.wasm
 */.quarto/
 */rendered/
+/node_modules/
+package-lock.json
