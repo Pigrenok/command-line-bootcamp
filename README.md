@@ -2,27 +2,18 @@
 
 [![Issues](https://img.shields.io/github/issues/leaningtech/webvm)](https://github.com/leaningtech/webvm/issues)
 
-This repository hosts the source code for Linux Command Line Bootcamp, which was derived from [Command Line Bootcamp](https://github.com/command-line-bootcamp/cli-boot.camp) but instead of docker container running in the background, use WebVM [https://webvm.io](https://webvm.io), a Linux virtual machine that runs in your browser.
+This repository hosts the source code for Linux Command Line Bootcamp, which was derived from [Command Line Bootcamp](https://github.com/command-line-bootcamp/cli-boot.camp) but instead of docker container running in the background, use WASM VM to run an image of Linux OS based on [container2wasm](https://github.com/ktock/container2wasm) which runs in your browser.
 
-There are minor modifications to code base and significant changes to the main Docker image for the WebVM to fit into the tutorials.
+This project use custom docker image that is converted to WASM image using [container2wasm](https://github.com/ktock/container2wasm).
 
-# TODO
+## TODO
 
 Modify tutorial 27 to work correctly with or without curl (copy necessary file into the image and modify tutorial text).
 
-# WebVM
+## Networking
 
-WebVM is a server-less virtual environment running fully client-side in HTML5/WebAssembly. It's designed to be Linux ABI-compatible. It runs an unmodified Debian distribution including many native development toolchains.
-
-WebVM is powered by the CheerpX virtualization engine, and enables safe, sandboxed client-side execution of x86 binaries on any browser. CheerpX includes an x86-to-WebAssembly JIT compiler, a virtual block-based file system, and a Linux syscall emulator. 
-
-## Enable networking
-
-- Click "Connect via Tailscale" in the page header.
-- Log in to Tailscale (create an account if you don't have one).
-- If you are unfamiliar with Tailscale or would like additional information see [WebVM and Tailscale](/docs/Tailscale.md).
-
-# Fork or use as template
+[Container2wasm](https://github.com/ktock/container2wasm) project supports 2 different networking modes. One using Fetch (used in this project), which is restricted by your browser CORS rules, and WebSocket, which requires a network stack daemon running locally, but it is much less restrictive. See details in the [container2wasm repo](https://github.com/ktock/container2wasm/tree/main/examples/networking).
+## Fork or use as template
 
 If you want to tailor this teaching resource to your needs (e.g. teach more advanced topics), you can either fork repository or you can use this repository as a template to create your own (even private) repository and then modify it in any way possible.
 
