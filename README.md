@@ -1,6 +1,6 @@
 # Linux Command Line Bootcamp
 
-[![Issues](https://img.shields.io/github/issues/leaningtech/webvm)](https://github.com/leaningtech/webvm/issues)
+[![Issues](https://img.shields.io/github/issues/Pigrenok/command-line-bootcamp)](https://github.com/Pigrenok/command-line-bootcamp/issues)
 
 This repository hosts the source code for Linux Command Line Bootcamp, which was derived from [Command Line Bootcamp](https://github.com/command-line-bootcamp/cli-boot.camp) but instead of docker container running in the background, use WASM VM to run an image of Linux OS based on [container2wasm](https://github.com/ktock/container2wasm) which runs in your browser.
 
