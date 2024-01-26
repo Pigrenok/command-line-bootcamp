@@ -20,8 +20,8 @@ The `ls` command is used to list the contents of _any_ directory, not necessaril
 learner@:~$ ls /
 bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
 
-learner@:~$ ls /etc/perl
-CPAN  Net
+learner@:~$ ls /etc/cron.daily/
+apt-compat  dpkg  man-db
 ```
 
 [ls]: https://en.wikipedia.org/wiki/Ls

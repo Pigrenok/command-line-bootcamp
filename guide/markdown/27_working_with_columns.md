@@ -10,27 +10,12 @@ First let's get ourselves a test file and look at it's contents:
 cp /data/grades.txt .
 ```
 
-<div class="accordion" id="NetworkDownload">
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingOne">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-        Downloading data (if connected to TailScale)
-      </button>
-    </h2>
-    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#NetworkDownload">
-      <div class="accordion-body">
-		If you connected network stack through TailScale, then you can instead download the same file using `curl`:
-
-		```bash
-		cd
-		curl https://raw.githubusercontent.com/Blahah/command_line_bootcamp/master/testfiles/grades.txt > grades.txt
-		```
-
-		`curl` will download the contents of any URL you provide it and print it to STDOUT. Since we want our test file on the filesystem, we redirect the output of `curl` to the file "grades.txt"
-	  </div>
-	</div>
-  </div>
-</div>
+You can try to download the same file using `curl`  
+```bash
+cd
+curl https://raw.githubusercontent.com/Blahah/command_line_bootcamp/master/testfiles/grades.txt > grades.txt
+```  
+Command `curl` will download the contents of any URL you provide it and print it to STDOUT. Since we want our test file on the filesystem, we redirect the output of `curl` to the file "grades.txt"
 
 First, look at the content of the file:
 
