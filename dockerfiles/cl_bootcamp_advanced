@@ -1,0 +1,29 @@
+FROM ubuntu:22.04
+
+RUN yes | unminimize
+
+RUN apt-get clean && apt-get update && apt-get -y upgrade
+
+RUN apt-get -y install apt-utils curl \
+	less nano tree file\
+	sudo\
+	man-db manpages manpages-posix \
+	parallel
+RUN apt autoremove && apt clean
+
+RUN useradd -m learner && echo "learner:learner" | chpasswd
+
+RUN echo 'learner ALL=(ALL:ALL) NOPASSWD: ALL' >> /etc/sudoers
+RUN chsh -s /bin/bash root
+RUN chsh -s /bin/bash learner
+
+WORKDIR /home/learner/
+
+USER learner
+
+RUN echo "export PS1=\"\[$(tput bold)\]\[\033[38;5;75m\]\u\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]@:\[$(tput sgr0)\]\[\033[38;5;9m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\"" >> /home/learner/.bashrc
+RUN mkdir -p a_directory  another_directory 
+
+COPY --chown=learner:learner ./dockerfiles/data/grades.txt /data/grades.txt
+
+CMD [ "/bin/bash" ]
