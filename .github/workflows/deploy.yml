@@ -10,12 +10,12 @@ on:
 
   # Allow inputs to be passed when manually triggering the workflow from the Actions tab
     inputs:
-      DOCKERFILE_PATH:
-        type: string
-        description: 'Path to the Dockerfile'
+      DOCKERFILE_NAME:
+        type: choice
+        description: 'Dockerfile'
         required: true
-        # default: 'dockerfiles/debian_large'
-        default: 'dockerfiles/cl_bootcamp_base'
+        options: ['cl_bootcamp_base','cl_bootcamp_advanced']
+        default: 'cl_bootcamp_base'
 
       DEPLOY_TO_GITHUB_PAGES:
         type: boolean
@@ -36,6 +36,7 @@ jobs:
   
       env:
         GH_TOKEN: ${{ github.token }} # As required by the GitHub-CLI  
+        DOCKERFILE_PATH: dockerfiles/${{ github.event.inputs.DOCKERFILE_NAME }}
 
       permissions:
         actions: 'write' # Required in order to terminate the workflow run.
@@ -48,8 +49,8 @@ jobs:
           shell: bash
           run: |
             # We check whether the Dockerfile_path is valid. 
-            if [ ! -f ${{ github.event.inputs.DOCKERFILE_PATH }} ]; then
-                echo "::error title=Invalid Dockerfile path::No file found at ${{ github.event.inputs.DOCKERFILE_PATH }}"
+            if [ ! -f $DOCKERFILE_PATH ]; then
+                echo "::error title=Invalid Dockerfile path::No file found at $DOCKERFILE_PATH"
                 echo "terminate=true" >> $GITHUB_ENV
             fi
 
@@ -91,6 +92,7 @@ jobs:
 
     env:
       TAG: "ext2-cl-bootcamp-base-image" # Tag of docker image.
+      DOCKERFILE_PATH: dockerfiles/${{ github.event.inputs.DOCKERFILE_NAME }}
       DEPLOY_DIR: /cl_bootcamp_deploy/ # Path to directory where we host the final image from.
 
     permissions: # Permissions to grant the GITHUB_TOKEN.
@@ -108,7 +110,7 @@ jobs:
       - name: Generate the image_name.
         id: image_name_gen
         run: |
-          echo "IMAGE_NAME=$(basename ${{ github.event.inputs.DOCKERFILE_PATH }})" >> $GITHUB_ENV
+          echo "IMAGE_NAME=$(basename $DOCKERFILE_PATH)" >> $GITHUB_ENV
           echo "IMAGE_FILE=$IMAGE_NAME_$(date +%Y%m%d)_$(date +"%H%M%S").wasm" >> $GITHUB_ENV
 
       # Build Docker image.
