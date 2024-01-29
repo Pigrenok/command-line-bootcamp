@@ -112,7 +112,10 @@ jobs:
         run: |
           echo "IMAGE_NAME=$(basename $DOCKERFILE_PATH)" >> $GITHUB_ENV
           echo "IMAGE_FILE=$IMAGE_NAME_$(date +%Y%m%d)_$(date +"%H%M%S").wasm" >> $GITHUB_ENV
-
+      
+      # Create directory to host the image from.
+      - run: sudo mkdir -p $DEPLOY_DIR
+      
       # Build Docker image.
       - name: Build WASM image
         run: |
