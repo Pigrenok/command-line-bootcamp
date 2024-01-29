@@ -113,7 +113,9 @@ jobs:
 
       # Build Docker image.
       - name: Build WASM image
-        run: ./image_gen.sh $IMAGE_NAME $IMAGE_FILE
+        run: |
+          chmod +x image_gen.sh
+          ./image_gen.sh $IMAGE_NAME $IMAGE_FILE
           
       # Set up quarto
       - name: Set up Quarto
