@@ -106,6 +106,7 @@ jobs:
           wget https://github.com/ktock/container2wasm/releases/download/v0.6.2/c2w-net-proxy.wasm
           wget https://github.com/ktock/container2wasm/releases/download/v0.6.2/container2wasm-v0.6.2-linux-amd64.tar.gz
           tar -zxvf container2wasm-v0.6.2-linux-amd64.tar.gz
+          chmod +x c2w
       # Setting the IMAGENAME variable in GITHUB_ENV to <Dockerfile name>_<date>_<run_id>.ext2.
       - name: Generate the image_name.
         id: image_name_gen
