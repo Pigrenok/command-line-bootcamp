@@ -1,6 +1,6 @@
 ## 18: Removing files
 
-You've seen how to remove a directory with the `rmdir` command, but `rmdir` won't remove directories if they contain any files. So how can we remove the files we have created (inside `learning_unix/temp`)? In order to do this, we will have to use the [rm][] (remove) command.
+You've seen how to remove a directory with the `rmdir` command, but `rmdir` won't remove directories if they contain any files. So how can we remove the files we have created (inside `learning_unix/temp`)? In order to do this, we will have to use the [rm](https://en.wikipedia.org/wiki/Rm_(Unix)){.external target="_blank"} (remove) command.
 
 >***Please read the next section VERY carefully. Misuse of the `rm` command can lead to needless death & destruction***
 
@@ -29,8 +29,6 @@ learner@:temp$ rmdir temp2/
 learner@:temp$ cd ..
 learner@:learning_unix$ rmdir temp
 ```
-
-[rm]: https://en.wikipedia.org/wiki/Rm_(Unix)
 
 ```{=html}	
 <div id="buttons-container" class="flex-container">

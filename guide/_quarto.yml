@@ -12,6 +12,9 @@ format:
     code-overflow: wrap
     code-block-bg: '#000000'
     highlight-style: arrow-dark
-
+    link-external-icon: true
+    link-external-newwindow: true
+    # link-external-filter: '^(http|https)://'
+    #'^(?:http:|https:)\/\/pigrenok\.github\.io\/command-line-bootcamp'
 
 

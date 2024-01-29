@@ -16,7 +16,7 @@ Use `nano` to add the following lines to `opening_lines.txt`, making sure to use
     Marley was dead, to begin with.
 
 
-You will often want to search files to find lines that match a certain pattern. The Unix command [grep][] does this (and much more). The following examples show how you can use grep's command-line options to:
+You will often want to search files to find lines that match a certain pattern. The Unix command [grep](https://en.wikipedia.org/wiki/Grep){.external target="_blank"} does this (and much more). The following examples show how you can use grep's command-line options to:
 
 + show lines that match a specified pattern
 + ignore case when matching (`-i`)
@@ -79,8 +79,6 @@ It was love at first sight.
 It was the day my grandmother exploded.
 When he was nearly thirteen, my brother Jem got his arm badly broken at the elbow.
 ```
-
-[grep]: https://en.wikipedia.org/wiki/Grep
 
 ```{=html}  
 <div id="buttons-container" class="flex-container">

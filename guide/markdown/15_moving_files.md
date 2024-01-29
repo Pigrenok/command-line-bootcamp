@@ -1,6 +1,6 @@
 ## 15: Moving files
 
-Now, let's assume that we want to move these files to a new directory ('temp'). We will do this using the Unix [mv][] (move) command. Remember to use tab completion:
+Now, let's assume that we want to move these files to a new directory ('temp'). We will do this using the Unix [mv](https://en.wikipedia.org/wiki/Mv){.external target="_blank"} (move) command. Remember to use tab completion:
 
 ```bash
 learner@:learning_unix$ mkdir temp
@@ -20,12 +20,9 @@ mv *t temp/
 mv *ea* temp/
 ```
 
-The asterisk `*` acts as a [wild-card character][], essentially meaning 'match anything'. The second example works because there are no other files or directories in the directory that end with the letters 't' (if there was, then they would be moved too). Likewise, the third example works because only those two files contain the letters 'ea' in their names. Using wild-card characters can save you a lot of typing.
+The asterisk `*` acts as a [wild-card character](https://en.wikipedia.org/wiki/Wildcard_character){.external target="_blank"}, essentially meaning 'match anything'. The second example works because there are no other files or directories in the directory that end with the letters 't' (if there was, then they would be moved too). Likewise, the third example works because only those two files contain the letters 'ea' in their names. Using wild-card characters can save you a lot of typing.
 
 The '?' character is also a wild-card but with a slightly different meaning. See if you can work out what it does.
-
-[mv]: https://en.wikipedia.org/wiki/Mv
-[wild-card character]: https://en.wikipedia.org/wiki/Wildcard_character
 
 ```{=html}	
 <div id="buttons-container" class="flex-container">

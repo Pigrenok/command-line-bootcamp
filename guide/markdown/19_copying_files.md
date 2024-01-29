@@ -1,6 +1,6 @@
 ## 19: Copying files
 
-Copying files with the [cp][] (copy) command is very similar to moving them. Remember to always specify a source and a target location. Let's create a new file and make a copy of it:
+Copying files with the [cp](https://en.wikipedia.org/wiki/Cp_(Unix)){.external target="_blank"} (copy) command is very similar to moving them. Remember to always specify a source and a target location. Let's create a new file and make a copy of it:
 
 ```bash
 learner@:learning_unix$ touch file1
@@ -35,8 +35,6 @@ Finally, let's clean up this directory. Note the use of the `*` wildcard, which 
 ```bash
 learner@:learning_unix$ rm file*
 ```
-
-[cp]: https://en.wikipedia.org/wiki/Cp_(Unix)
 
 ```{=html}	
 <div id="buttons-container" class="flex-container">

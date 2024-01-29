@@ -1,6 +1,6 @@
 ## 05: Getting from 'A' to 'B'
 
-We are in the home directory on the computer but we want to to work in the new `learning_unix` directory. To change directories in Unix, we use the [cd][] command:
+We are in the home directory on the computer but we want to to work in the new `learning_unix` directory. To change directories in Unix, we use the [cd](https://en.wikipedia.org/wiki/Cd_(command)){.external target="_blank"} command:
 
 ```bash
 cd learning_unix
@@ -37,8 +37,6 @@ mkdir -p outer/inner
 ```
 
 ***Note the spaces either side the `-p`!***
-
-[cd]: https://en.wikipedia.org/wiki/Cd_(command)
 
 ```{=html}	
 <div id="buttons-container" class="flex-container">
