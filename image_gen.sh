@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
+set -ex
 
-IMAGENAME=${1:-cl-bootcamp-base}
-IMAGEFILE=${2:-$IMAGENAME_$(date +%Y%m%d)_$(date +"%H%M%S").wasm}
-DOCKERFILEPATH=${1:-./dockerfiles/$IMAGENAME}
-docker build --rm -t $IMAGENAME -f $DOCKERFILEPATH .
-c2w $IMAGENAME:latest $IMAGENAME.wasm
+IMAGE_NAME=${1:-cl_bootcamp_base}
+IMAGE_FILE=${2:-$IMAGENAME_$(date +%Y%m%d)_$(date +"%H%M%S").wasm}
+DOCKERFILEPATH=${1:-./dockerfiles/$IMAGE_NAME}
+docker build --rm -t $IMAGE_NAME -f $DOCKERFILEPATH .
+./c2w $IMAGENAME:latest $IMAGENAME.wasm
 sed -i 's/cl-bootcamp-base.wasm/$IMAGENAME.wasm/g' index.html
