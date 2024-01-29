@@ -106,13 +106,15 @@ jobs:
           wget https://github.com/ktock/container2wasm/releases/download/v0.6.2/c2w-net-proxy.wasm
           wget https://github.com/ktock/container2wasm/releases/download/v0.6.2/container2wasm-v0.6.2-linux-amd64.tar.gz
           tar -zxvf container2wasm-v0.6.2-linux-amd64.tar.gz
-      # Setting the IMAGE_NAME variable in GITHUB_ENV to <Dockerfile name>_<date>_<run_id>.ext2.
+      # Setting the IMAGENAME variable in GITHUB_ENV to <Dockerfile name>_<date>_<run_id>.ext2.
       - name: Generate the image_name.
         id: image_name_gen
-        run: |
-          echo "IMAGE_NAME=$(basename $DOCKERFILE_PATH)" >> $GITHUB_ENV
-          echo "IMAGE_FILE=$IMAGE_NAME_$(date +%Y%m%d)_$(date +"%H%M%S").wasm" >> $GITHUB_ENV
+        run: echo "IMAGENAME=$(basename $DOCKERFILE_PATH)" >> $GITHUB_ENV
       
+      - name: Generate the image_file.
+        id: image_file_gen
+        run: echo "IMAGEFILE=${{ env.IMAGENAME }}_$(date +%Y%m%d)_$(date +"%H%M%S").wasm" >> $GITHUB_ENV
+
       # Create directory to host the image from.
       - run: sudo mkdir -p $DEPLOY_DIR
       
@@ -120,7 +122,7 @@ jobs:
       - name: Build WASM image
         run: |
           chmod +x image_gen.sh
-          ./image_gen.sh $IMAGE_NAME $IMAGE_FILE
+          ./image_gen.sh $IMAGENAME $IMAGEFILE
           
       # Set up quarto
       - name: Set up Quarto
@@ -145,7 +147,7 @@ jobs:
           c2w-net-proxy.wasm coi-serviceworker.js 
           favicon.ico index.html main.css scrollbar.css 
           stack.js stack-worker.js wasi-util.js worker.js 
-          worker-util.js ws-delegate.js $IMAGE_FILE 
+          worker-util.js ws-delegate.js $IMAGEFILE 
           $DEPLOY_DIR
 
       - run: sudo mv dockerfiles/data $DEPLOY_DIR/data
@@ -165,7 +167,7 @@ jobs:
           tag_name: CL-Bootcamp-WASM-Image
           fail_on_unmatched_files: 'true' # Fail in case of no matches with the file(s) glob(s).
           files: | # Assets to upload as release.
-            ${{ env.IMAGE_FILE }}
+            ${{ env.IMAGEFILE }}
       
   deploy_to_github_pages: # Job that deploys the github-pages artifact to github-pages.
     if: ${{ github.event.inputs.DEPLOY_TO_GITHUB_PAGES == 'true' }}
