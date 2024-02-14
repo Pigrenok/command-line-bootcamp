@@ -13,7 +13,7 @@ cp /data/grades.txt .
 You can try to download the same file using `curl`  
 ```bash
 cd
-curl https://raw.githubusercontent.com/Blahah/command_line_bootcamp/master/testfiles/grades.txt > grades.txt
+curl https://pigrenok.github.io/command-line-bootcamp/data/grades.txt > grades.txt
 ```  
 Command `curl` will download the contents of any URL you provide it and print it to STDOUT. Since we want our test file on the filesystem, we redirect the output of `curl` to the file "grades.txt"
 
