@@ -2,19 +2,19 @@
 
 Use `nano` to add the following lines to `opening_lines.txt`, making sure to use the `WriteOut` command to save:
 
-
-    Now is the winter of our discontent.
-    All children, except one, grow up.
-    The Galactic Empire was dying.
-    In a hole in the ground there lived a hobbit.
-    It was a pleasure to burn.
-    It was a bright, cold day in April, and the clocks were striking thirteen.
-    It was love at first sight.
-    I am an invisible man.
-    It was the day my grandmother exploded.
-    When he was nearly thirteen, my brother Jem got his arm badly broken at the elbow.
-    Marley was dead, to begin with.
-
+```
+Now is the winter of our discontent.
+All children, except one, grow up.
+The Galactic Empire was dying.
+In a hole in the ground there lived a hobbit.
+It was a pleasure to burn.
+It was a bright, cold day in April, and the clocks were striking thirteen.
+It was love at first sight.
+I am an invisible man.
+It was the day my grandmother exploded.
+When he was nearly thirteen, my brother Jem got his arm badly broken at the elbow.
+Marley was dead, to begin with.
+```
 
 You will often want to search files to find lines that match a certain pattern. The Unix command [grep](https://en.wikipedia.org/wiki/Grep){.external target="_blank"} does this (and much more). The following examples show how you can use grep's command-line options to:
 

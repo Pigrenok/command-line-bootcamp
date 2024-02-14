@@ -1,4 +1,4 @@
-## 26: The $PATH environment variable
+## 25: The $PATH environment variable
 
 One other use of the `echo` command is for displaying the contents of something known as *environment variables*. These contain user-specific or system-wide values that either reflect simple pieces of information (your username), or lists of useful locations on the file system. Some examples:
 

@@ -11,7 +11,7 @@ learner@:learning_unix$ ls
 learner@:learning_unix$
 ```
 
-*** Note, you have to be outside a directory before you can remove it with `rmdir` ***
+***Note, you have to be outside a directory before you can remove it with `rmdir`***
 
 ```{=html}	
 <div id="buttons-container" class="flex-container">
