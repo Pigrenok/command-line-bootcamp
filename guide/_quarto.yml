@@ -2,7 +2,8 @@ project:
   title: "Command Line Bootcamp Guides"
   output-dir: ./rendered/
   # lib-dir: ./static/
-  # resources: 
+  resources: 
+    - images/*
     
 
 format:
@@ -11,6 +12,7 @@ format:
     css: ./markdown/style.css
     code-overflow: wrap
     code-block-bg: '#000000'
+    code-bg: '#ffe6f9'
     highlight-style: arrow-dark
     link-external-icon: true
     link-external-newwindow: true
