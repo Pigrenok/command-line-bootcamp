@@ -46,6 +46,6 @@ sed 's/Chr1/Chromosome 1/g' file.txt > file2.txt
 <div id="buttons-container" class="flex-container">
 <a role="button" class="flex-item btn btn-danger" href="28_combining_commands.html">Previous</a> 
 <a role="button" class="flex-item btn btn-info" href="index.html">Table of Content</a> 
-<a role="button" class="flex-item btn btn-success" disabled>Next</a>
+<a role="button" class="flex-item btn btn-success disabled-link" aria-disabled="true" tabindex="-1">Next</a>
 </div>
 ```

@@ -281,3 +281,7 @@ li[data-reactid^=".0.0.$/="] { display: none; }
 .two-column-list li {
   margin-bottom: 10px;
 }
+
+.disabled-link {
+    pointer-events: none;
+}

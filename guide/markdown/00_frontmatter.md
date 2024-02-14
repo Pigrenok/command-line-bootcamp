@@ -28,7 +28,7 @@ From time to time this documentation will contain [web links](https://en.wikiped
 
 ```{=html}	
 <div id="buttons-container" class="flex-container">
-<a role="button" class="flex-item btn btn-danger" disabled>Previous</a> 
+<a role="button" class="flex-item btn btn-danger disabled-link" aria-disabled="true" tabindex="-1">Previous</a> 
 <a role="button" class="flex-item btn btn-info" href="index.html">Table of Content</a> 
 <a role="button" class="flex-item btn btn-success" href="01_first_command.html">Next</a>
 </div>
